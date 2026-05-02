@@ -13,7 +13,7 @@ function Login() {
   const navigate = useNavigate();
 
   const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://mid-marks-backend.onrender.com",
     headers: { "Content-Type": "application/json" },
   });
 

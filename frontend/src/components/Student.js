@@ -14,7 +14,7 @@ function Student() {
   useEffect(() => {
     if (!user || user.role !== "student") return;
 
-    fetch(`http://localhost:3000/api/marks?studentId=${user._id}&semester=${user.semester}&status=approved`)
+    fetch(`https://mid-marks-backend.onrender.com/api/marks?studentId=${user._id}&semester=${user.semester}&status=approved`)
       .then((res) => res.json())
       .then((data) => {
         setMarks(Array.isArray(data) ? data : []);

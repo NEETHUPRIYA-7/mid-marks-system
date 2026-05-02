@@ -13,7 +13,7 @@ function Assignments({ users, deptList, subjects, assignments, setAssignments })
 
   // FETCH
   const fetchAssignments = async () => {
-    const res = await fetch("http://localhost:3000/api/assignments");
+    const res = await fetch("https://mid-marks-backend.onrender.com/api/assignments");
     const data = await res.json();
     setAssignments(data);
   };
@@ -36,7 +36,7 @@ function Assignments({ users, deptList, subjects, assignments, setAssignments })
 
   // DELETE
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/api/assignments/${id}`, {
+    await fetch(`https://mid-marks-backend.onrender.com/api/assignments/${id}`, {
       method: "DELETE"
     });
 
@@ -147,14 +147,14 @@ function Assignments({ users, deptList, subjects, assignments, setAssignments })
 
                 try {
                   if (editingId) {
-                    await fetch(`http://localhost:3000/api/assignments/${editingId}`, {
+                    await fetch(`https://mid-marks-backend.onrender.com/api/assignments/${editingId}`, {
                       method: "PUT",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify(data)
                     });
                     console.log("✅ Updated");
                   } else {
-                    await fetch("http://localhost:3000/api/assignments", {
+                    await fetch("https://mid-marks-backend.onrender.com/api/assignments", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify(data)

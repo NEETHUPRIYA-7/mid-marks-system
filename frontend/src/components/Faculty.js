@@ -46,7 +46,7 @@ useEffect(() => {
 
   const parsed = JSON.parse(reportClass);
 
-  let url = `http://localhost:3000/api/marks?department=${parsed.dept}&semester=${parsed.sem}&section=${parsed.sec}&status=approved`;
+  let url = `https://mid-marks-backend.onrender.com/api/marks?department=${parsed.dept}&semester=${parsed.sem}&section=${parsed.sec}&status=approved`;
 
   if (reportSubject) {
     url += `&subject=${reportSubject}`;
@@ -140,7 +140,7 @@ const fetchSavedMarks = () => {
 
   const parsed = JSON.parse(selected);
 
-  fetch(`http://localhost:3000/api/marks?department=${parsed.dept}&semester=${parsed.sem}&section=${parsed.sec}`)
+  fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${parsed.dept}&semester=${parsed.sem}&section=${parsed.sec}`)
     .then(res => res.json())
     .then(data => {
       console.log("Saved Marks:", data);
@@ -172,7 +172,7 @@ const handleSaveDraft = async () => {
 }
   const data = prepareMarks("draft");
 
-  await fetch("http://localhost:3000/api/marks/save", {
+  await fetch("https://mid-marks-backend.onrender.com/api/marks/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -196,7 +196,7 @@ const handleSubmit = async () => {
   return;
 }
 
-  await fetch("http://localhost:3000/api/marks/submit", {
+  await fetch("https://mid-marks-backend.onrender.com/api/marks/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -284,13 +284,13 @@ useEffect(() => {
   const { dept, sem, sec } = parsed;
 console.log("FETCHING STUDENTS:", dept, sem, sec);
   // ✅ 1. Fetch students
-  fetch(`http://localhost:3000/api/students?department=${dept}&semester=${sem}&section=${sec}`)
+  fetch(`https://mid-marks-backend.onrender.com/api/students?department=${dept}&semester=${sem}&section=${sec}`)
     .then(res => res.json())
     .then(studentData => {
       setStudents(studentData);
 
       // ✅ 2. Fetch marks for selected subject
-      fetch(`http://localhost:3000/api/marks?department=${dept}&semester=${sem}&section=${sec}&subject=${selectedSubject}`)
+      fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${dept}&semester=${sem}&section=${sec}&subject=${selectedSubject}`)
         .then(res => res.json())
         .then(markData => {
 
@@ -320,7 +320,7 @@ useEffect(() => {
 
   const parsed = JSON.parse(selected);
 
-  fetch("http://localhost:3000/api/mark-settings")
+  fetch("https://mid-marks-backend.onrender.com/api/mark-settings")
     .then(res => res.json())
     .then(data => {
       console.log("ALL LIMITS:", data);
@@ -339,7 +339,7 @@ useEffect(() => {
 
   if (!user) return;
 
-  fetch("http://localhost:3000/api/assignments")
+  fetch("https://mid-marks-backend.onrender.com/api/assignments")
     .then(res => res.json())
     .then(data => {
       console.log("ALL DATA:", data); // 👈 check this in console

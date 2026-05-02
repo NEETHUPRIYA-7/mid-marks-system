@@ -47,7 +47,7 @@ const downloadPDF = () => {
   doc.save(`${dept}_report.pdf`);
 };
 useEffect(() => {
-  fetch(`http://localhost:3000/api/marks?department=${dept}&status=approved`)
+  fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${dept}&status=approved`)
     .then(res => res.json())
     .then(data => {
       console.log("REPORT DATA:", data);
@@ -124,7 +124,7 @@ reportData.forEach(m => {
 const passCount = Object.values(studentStatus).filter(s => !s.isFail).length;
 const failCount = Object.values(studentStatus).filter(s => s.isFail).length;
 useEffect(() => {
-  fetch("http://localhost:3000/api/users")
+  fetch("https://mid-marks-backend.onrender.com/api/users")
     .then(res => res.json())
     .then(data => {
       // ✅ only students
@@ -162,15 +162,15 @@ useEffect(() => {
   const fetchStats = async () => {
     try {
       // 👇 users
-      const usersRes = await fetch("http://localhost:3000/api/users");
+      const usersRes = await fetch("https://mid-marks-backend.onrender.com/api/users");
       const users = await usersRes.json();
 
       // 👇 marks
-      const marksRes = await fetch(`http://localhost:3000/api/marks?department=${dept}`);
+      const marksRes = await fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${dept}`);
       const marks = await marksRes.json();
 
       // 👇 subjects
-      const subRes = await fetch("http://localhost:3000/api/subjects");
+      const subRes = await fetch("https://mid-marks-backend.onrender.com/api/subjects");
       const subjects = await subRes.json();
 
       // FILTER LOGIC
@@ -206,7 +206,7 @@ useEffect(() => {
 }, [dept]);
 
   useEffect(() => {
-  fetch(`http://localhost:3000/api/marks?department=${dept}&status=submitted`)
+  fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${dept}&status=submitted`)
     .then(res => res.json())
     .then(data => {
       console.log("HOD DATA:", data);
@@ -217,7 +217,7 @@ useEffect(() => {
 const [approvedData, setApprovedData] = useState([]);
 
 useEffect(() => {
-  fetch(`http://localhost:3000/api/marks?department=${dept}&status=approved`)
+  fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${dept}&status=approved`)
     .then(res => res.json())
     .then(data => {
       setApprovedData(data);
@@ -233,7 +233,7 @@ useEffect(() => {
     navigate("/");
   };
   const handleApprove = async (mark) => {
-  await fetch("http://localhost:3000/api/marks/approve", {
+  await fetch("https://mid-marks-backend.onrender.com/api/marks/approve", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -257,7 +257,7 @@ const handleReject = async (mark) => {
     return;
   }
 
-  await fetch("http://localhost:3000/api/marks/reject", {
+  await fetch("https://mid-marks-backend.onrender.com/api/marks/reject", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -16,7 +16,7 @@ function Subjects({ deptList, subjects, setSubjects }) {
 
   // FETCH SUBJECTS
   const fetchSubjects = async () => {
-    const res = await fetch("http://localhost:3000/api/subjects");
+    const res = await fetch("https://mid-marks-backend.onrender.com/api/subjects");
     const data = await res.json();
     setSubjects(data);
   };
@@ -28,7 +28,7 @@ function Subjects({ deptList, subjects, setSubjects }) {
   // DELETE
   const handleDeleteSubject = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/subjects/${id}`, {
+    const res = await fetch(`https://mid-marks-backend.onrender.com/api/subjects/${id}`, {
       method: "DELETE"
     });
 
@@ -152,7 +152,7 @@ function Subjects({ deptList, subjects, setSubjects }) {
 
                 try {
                   if (editingId) {
-                    await fetch(`http://localhost:3000/api/subjects/${editingId}`, {
+                    await fetch(`https://mid-marks-backend.onrender.com/api/subjects/${editingId}`, {
                       method: "PUT",
                       headers: {
                         "Content-Type": "application/json"
@@ -162,7 +162,7 @@ function Subjects({ deptList, subjects, setSubjects }) {
 
                     console.log("✅ Subject updated");
                   } else {
-                    await fetch("http://localhost:3000/api/subjects", {
+                    await fetch("https://mid-marks-backend.onrender.com/api/subjects", {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json"

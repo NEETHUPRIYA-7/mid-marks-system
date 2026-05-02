@@ -67,7 +67,7 @@ const [pSec, setPSec] = useState("");
     return;
   }
 
-  const res = await fetch("http://localhost:3000/api/auth/promote", {
+  const res = await fetch("https://mid-marks-backend.onrender.com/api/auth/promote", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -83,7 +83,7 @@ const [pSec, setPSec] = useState("");
   alert(data.updatedCount + " students promoted");
 };
 const handleDepromote = async () => {
-  await fetch("http://localhost:3000/api/auth/depromote", {
+  await fetch("https://mid-marks-backend.onrender.com/api/auth/depromote", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -151,7 +151,7 @@ const downloadReportPDF = () => {
 useEffect(() => {
   if (!reportDept || !reportSem || !reportSec) return;
 
-  fetch(`http://localhost:3000/api/marks?department=${reportDept}&semester=${reportSem}&section=${reportSec}&status=approved`)
+  fetch(`https://mid-marks-backend.onrender.com/api/marks?department=${reportDept}&semester=${reportSem}&section=${reportSec}&status=approved`)
     .then(res => res.json())
     .then(data => {
       setReportData(data);
@@ -161,7 +161,7 @@ useEffect(() => {
 
 useEffect(() => {
   // USERS
-  fetch("http://localhost:3000/api/users")
+  fetch("https://mid-marks-backend.onrender.com/api/users")
     .then(res => res.json())
     .then(data => {
       setStudents(data.filter(u => u.role === "student"));
@@ -169,12 +169,12 @@ useEffect(() => {
     });
 
   // DEPARTMENTS
-  fetch("http://localhost:3000/api/departments")
+  fetch("https://mid-marks-backend.onrender.com/api/departments")
     .then(res => res.json())
     .then(data => setDepartments(data));
 
   // SUBJECTS
-  fetch("http://localhost:3000/api/subjects")
+  fetch("https://mid-marks-backend.onrender.com/api/subjects")
     .then(res => res.json())
     .then(data => setSubjects(data));
 }, []);
@@ -182,7 +182,7 @@ const handleDeleteUser = async (id) => {
   try {
     console.log("Sending to backend:", id);
 
-    const res = await fetch(`http://localhost:3000/api/users/${id}`, {
+    const res = await fetch(`https://mid-marks-backend.onrender.com/api/users/${id}`, {
       method: "DELETE",
     });
 
@@ -222,7 +222,7 @@ const handleDeleteDept = async (id) => {
   try {
     console.log("Deleting ID:", id);
 
-    const res = await fetch(`http://localhost:3000/api/departments/${id}`, {
+    const res = await fetch(`https://mid-marks-backend.onrender.com/api/departments/${id}`, {
       method: "DELETE",
     });
     fetchDepartments();
@@ -267,13 +267,13 @@ const handleEdit = (dept) => {
     navigate("/");
   };
   const fetchUsers = async () => {
-  const res = await fetch("http://localhost:3000/api/users");
+  const res = await fetch("https://mid-marks-backend.onrender.com/api/users");
   const data = await res.json();
   setUsers(data);
 };
 
 const fetchDepartments = async () => {
-  const res = await fetch("http://localhost:3000/api/departments");
+  const res = await fetch("https://mid-marks-backend.onrender.com/api/departments");
   const data = await res.json();
   setDeptList(data);
 };
@@ -293,14 +293,14 @@ const handleSaveUser = async () => {
 
   if (editingUserId) {
     // UPDATE
-    await fetch(`http://localhost:3000/api/users/${editingUserId}`, {
+    await fetch(`https://mid-marks-backend.onrender.com/api/users/${editingUserId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
     });
   } else {
     // ADD
-    await fetch("http://localhost:3000/api/users", {
+    await fetch("https://mid-marks-backend.onrender.com/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
@@ -318,7 +318,7 @@ const checkStudents = async () => {
   if (!pDept || !pSem || !pSec) return;
 
   const res = await fetch(
-    `http://localhost:3000/api/students?department=${pDept}&semester=${pSem}&section=${pSec}`
+    `https://mid-marks-backend.onrender.com/api/students?department=${pDept}&semester=${pSem}&section=${pSec}`
   );
 
   const data = await res.json();
@@ -589,7 +589,7 @@ useEffect(() => {
   try {
     if (editingUserId) {
       // UPDATE
-      await fetch(`http://localhost:3000/api/users/${editingUserId}`, {
+      await fetch(`https://mid-marks-backend.onrender.com/api/users/${editingUserId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -600,7 +600,7 @@ useEffect(() => {
       console.log("User updated");
     } else {
       // CREATE
-      await fetch("http://localhost:3000/api/users", {
+      await fetch("https://mid-marks-backend.onrender.com/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -761,7 +761,7 @@ useEffect(() => {
 
   if (editingDeptId) {
   // ✏️ UPDATE
-  await fetch(`http://localhost:3000/api/departments/${editingDeptId}`, {
+  await fetch(`https://mid-marks-backend.onrender.com/api/departments/${editingDeptId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -778,7 +778,7 @@ useEffect(() => {
   console.log("Department updated");
 } else {
   // ➕ CREATE
-  await fetch("http://localhost:3000/api/departments", {
+  await fetch("https://mid-marks-backend.onrender.com/api/departments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

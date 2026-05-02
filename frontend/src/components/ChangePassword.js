@@ -58,7 +58,7 @@ function ChangePassword() {
             }
 
             try {
-              const res = await fetch("http://localhost:3000/api/change-password", {
+              const res = await fetch("https://mid-marks-backend.onrender.com/api/change-password", {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json"

@@ -12,7 +12,7 @@ function MarksSettings({ deptList }) {
   // 🔹 Fetch settings
   const fetchSettings = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/mark-settings");
+    const res = await fetch("https://mid-marks-backend.onrender.com/api/mark-settings");
     const data = await res.json();
 
     console.log("Fetched settings:", data);
@@ -93,7 +93,7 @@ function MarksSettings({ deptList }) {
             try {
               if (editingId) {
                 // ✏️ UPDATE
-                await fetch(`http://localhost:3000/api/mark-settings/${editingId}`, {
+                await fetch(`https://mid-marks-backend.onrender.com/api/mark-settings/${editingId}`, {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json"
@@ -104,7 +104,7 @@ function MarksSettings({ deptList }) {
                 console.log("✅ Updated");
               } else {
                 // ➕ CREATE
-                await fetch("http://localhost:3000/api/mark-settings", {
+                await fetch("https://mid-marks-backend.onrender.com/api/mark-settings", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json"
@@ -193,7 +193,7 @@ function MarksSettings({ deptList }) {
                       cursor: "pointer"
                     }}
                     onClick={async () => {
-                      await fetch(`http://localhost:3000/api/mark-settings/${s._id}`, {
+                      await fetch(`https://mid-marks-backend.onrender.com/api/mark-settings/${s._id}`, {
                         method: "DELETE"
                       });
 
