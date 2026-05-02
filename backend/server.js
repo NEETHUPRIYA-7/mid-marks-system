@@ -7,9 +7,9 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 // CORS: echo request origin to ensure ACAO is returned for browser preflight
+
 app.use(cors({
-  origin: "https://mid-marks-system.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: "*"
 }));
 
 app.use(express.json());
