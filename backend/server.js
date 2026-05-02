@@ -9,8 +9,10 @@ const app = express();
 // CORS: echo request origin to ensure ACAO is returned for browser preflight
 
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
 }));
+app.options('*', cors());
 
 app.use(express.json());
 
