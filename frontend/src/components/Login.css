@@ -1,0 +1,172 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* PAGE BACKGROUND */
+.login-page {
+  height: 100vh;
+  background: url("./background.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOGIN BOX */
+.login-box {
+  width: 350px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  display: flex;                 /* ✅ FIX */
+  flex-direction: column;        /* ✅ FIX */
+}
+
+/* LOGO */
+.logo {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TITLE */
+.login-box h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.login-box h3 {
+  font-size: 13px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: #eee;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS */
+.input-box {
+  margin-bottom: 12px;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.input-box input::placeholder {
+  color: #555;
+}
+
+/* ROLE BUTTONS */
+.roles {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 FINAL FIX FOR BUTTON STRETCH */
+.roles button {
+  flex: 1;
+  height: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+
+  display: flex;                 /* ✅ FIX */
+  align-items: center;           /* ✅ FIX */
+  justify-content: center;       /* ✅ FIX */
+}
+
+/* BUTTON COLORS */
+.admin {
+  background: #e74c3c;
+}
+
+.teacher {
+  background: #3498db;
+}
+
+.hod {
+  background: #441adc;
+}
+
+.student {
+  background: #2ecc71;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 10px 0;
+  color: white;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: scale(1.03);
+}
+ 
+.password-box {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+/* DARK MODE FIX */

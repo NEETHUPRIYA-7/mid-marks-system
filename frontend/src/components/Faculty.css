@@ -1,0 +1,139 @@
+/* LAYOUT */
+.faculty-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar p {
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar p:hover {
+  background: #1e293b;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+  background: #f8fafc;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* DASHBOARD */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 220px;
+  height: 120px;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* COLORS */
+.blue {
+  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+}
+
+.green {
+  background: linear-gradient(45deg, #10b981, #34d399);
+}
+
+.orange {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: white;
+}
+
+th {
+  background: #1e293b;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+input {
+  width: 60px;
+  padding: 5px;
+}
+
+/* BUTTONS */
+.btns {
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: orange;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: green;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+}
+
+.download-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}

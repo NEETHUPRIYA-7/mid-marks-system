@@ -1,0 +1,100 @@
+.student-container {
+  background: #f5f7fa;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* HEADER */
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.student-header button {
+  margin-left: 10px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  cursor: pointer;
+}
+
+/* CARD */
+.student-card {
+  background: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background: #34495e;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* BUTTON */
+.download-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #27ae60;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* UNAUTHORIZED */
+.unauthorized {
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media print {
+  body {
+    zoom: 85%;
+  }
+
+  .student-header button {
+    display: none; /* hide buttons */
+  }
+
+  .student-header {
+    justify-content: center;
+  }
+
+  .student-container {
+    padding: 0;
+    background: white;
+  }
+
+  .student-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .download-btn {
+    display: none; /* hide button in pdf */
+  }
+}

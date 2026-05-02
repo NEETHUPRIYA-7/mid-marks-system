@@ -1,0 +1,101 @@
+/* MAIN LAYOUT */
+.hod {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #1e2a38;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sidebar ul li:hover {
+  background: #2f3e52;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  background: #f5f6fa;
+  padding: 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* DASHBOARD CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* COLORS */
+.card:nth-child(1) {
+  background: #3498db;
+}
+
+.card:nth-child(2) {
+  background: #2ecc71;
+}
+
+.card:nth-child(3) {
+  background: #f1c40f;
+}
+
+.card:nth-child(4) {
+  background: #e74c3c;
+}
+
+
+.download-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
