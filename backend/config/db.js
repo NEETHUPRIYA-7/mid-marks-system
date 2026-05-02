@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/midmarks");
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("DB connected successfully");
   } catch (err) {
     console.log("DB Error:", err.message);
