@@ -8,10 +8,8 @@ const app = express();
 
 // CORS: echo request origin to ensure ACAO is returned for browser preflight
 app.use(cors({
-  origin: true, // reflect request origin
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  origin: "https://mid-marks-system.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 
 app.use(express.json());
