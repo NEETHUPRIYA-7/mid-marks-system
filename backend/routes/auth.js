@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
 });
 
 // LOGIN
-router.post("/login", cors({ origin: 'http://localhost:3001', credentials: true }), async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     console.log('🔐 POST /api/auth/login hit');
     const { email, password } = req.body;
@@ -75,6 +75,8 @@ router.post("/login", cors({ origin: 'http://localhost:3001', credentials: true 
     res.status(500).json({ error: err.message });
   }
 });
+
+
 
 router.get("/profile", authMiddleware, (req, res) => {
   res.json({
